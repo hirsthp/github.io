@@ -1,0 +1,131 @@
+{UTF-8}
+Birth Rate=
+	2
+	~	
+	~		|
+
+Harvesting Rate=
+	2000
+	~	 [0,20000,1000]
+	~		|
+
+Maximum Sustainable Population=
+	77000
+	~	
+	~		|
+
+Monthly Births=
+	Birth Rate * Shrimp Population * (1 - Shrimp Population / Maximum Sustainable Population\
+		)
+	~	
+	~		|
+
+Monthly Harvesting=
+	Harvesting Rate
+	~	
+	~		|
+
+Restocking=
+	5000
+	~	
+	~		|
+
+Shrimp Population= INTEG (
+	Monthly Births+Restocking-Monthly Harvesting,
+		5000)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 24
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,200,0
+10,1,Shrimp Population,322,146,40,20,3,3,0,0,0,0,0,0
+12,2,48,127,147,10,8,0,3,0,0,-1,0,0,0
+1,4,6,1,4,0,0,22,0,0,0,-1--1--1,,1|(242,149)|
+1,5,6,2,100,0,0,22,0,0,0,-1--1--1,,1|(163,149)|
+11,6,0,196,149,6,8,34,3,0,0,1,0,0,0
+10,7,Monthly Births,196,172,24,15,40,131,0,0,-1,0,0,0
+12,14,48,496,143,10,8,0,3,0,0,-1,0,0,0
+1,16,18,14,4,0,0,22,0,0,0,-1--1--1,,1|(458,143)|
+1,17,18,1,100,0,0,22,0,0,0,-1--1--1,,1|(390,143)|
+11,18,0,424,143,6,8,34,3,0,0,1,0,0,0
+10,19,Monthly Harvesting,424,159,51,8,40,3,0,0,-1,0,0,0
+10,25,Birth Rate,273,211,18,14,8,131,0,0,0,0,0,0
+10,26,Harvesting Rate,407,215,35,17,8,131,0,0,0,0,0,0
+1,27,1,6,1,0,0,0,0,64,0,-1--1--1,,1|(212,122)|
+1,28,25,7,0,0,0,0,0,64,0,-1--1--1,,1|(243,196)|
+1,29,26,19,0,0,0,0,0,64,0,-1--1--1,,1|(414,189)|
+10,30,Maximum Sustainable Population,99,205,30,21,8,3,0,0,0,0,0,0
+1,31,30,7,0,0,0,0,0,64,0,-1--1--1,,1|(143,189)|
+12,32,0,254,399,201,111,3,188,0,0,1,0,0,0
+Shrimp_Population
+12,37,48,224,41,10,8,0,3,0,0,-1,0,0,0
+1,39,41,1,4,0,0,22,0,0,0,-1--1--1,,1|(322,87)|
+1,40,41,37,100,0,0,22,0,0,0,-1--1--1,,1|(275,41)|
+11,41,0,322,41,6,8,34,3,0,0,1,0,0,0
+10,42,Restocking,322,57,29,8,40,3,0,0,-1,0,0,0
+///---\\\
+:GRAPH Shrimp_Population
+:TITLE  
+:X-AXIS Time
+:SCALE
+:VAR Shrimp Population
+:Y-MIN 0
+:Y-MAX 80000
+:L<%^E!@
+1:Current.vdf
+9:Current
+22:$,Dollar,Dollars,$s
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+22:Day,Days
+23:0
+15:0,0,0,0,0,0
+19:200,0
+27:2,
+34:0,
+4:Time
+5:Restocking
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+42:1
+24:0
+25:24
+26:24

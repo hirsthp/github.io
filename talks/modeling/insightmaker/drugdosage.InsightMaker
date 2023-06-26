@@ -1,0 +1,86 @@
+<InsightMakerModel>
+<root>
+<mxCell id="0"/>
+<mxCell id="1" parent="0"/>
+<Setting Note="" Version="36" TimeLength="150" TimeStart="0" TimeStep="1" TimeUnits="Hours" StrictUnits="true" StrictLinks="true" StrictAgentResolution="true" Units="" HiddenUIGroups="Validation,User Interface" SolutionAlgorithm="RK1" BackgroundColor="white" Throttle="1" Macros="" SensitivityPrimitives="" SensitivityRuns="50" SensitivityBounds="50, 80, 95, 100" SensitivityShowRuns="false" article="{&quot;comments&quot;:true, &quot;facebookUID&quot;: &quot;&quot;}" StyleSheet="{}" id="2">
+<mxCell parent="1" vertex="1" visible="0">
+<mxGeometry x="20" y="20" width="80" height="40" as="geometry"/>
+</mxCell>
+</Setting>
+<Display name="Default Display" Note="" Type="Time Series" xAxis="Time (%u)" yAxis="%o" ThreeDimensional="false" Primitives="55,65,64" AutoAddPrimitives="true" ScatterplotOrder="X Primitive, Y Primitive" Image="Display" yAxis2="" Primitives2="" showMarkers="false" showLines="true" showArea="false" legendPosition="None" id="3">
+<mxCell style="roundImage;image=/builder/images/DisplayFull.png;" parent="1" vertex="1" visible="0">
+<mxGeometry x="50" y="20" width="64" height="64" as="geometry"/>
+</mxCell>
+</Display>
+<Stock name="Drug Concentration" Note="" InitialValue="0" StockMode="Store" Delay="10" Volume="100" NonNegative="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="55">
+<mxCell style="stock" parent="1" vertex="1">
+<mxGeometry x="240" y="80" width="100" height="40" as="geometry"/>
+</mxCell>
+</Stock>
+<Flow name="Dosage" Note="" FlowRate="Pulse(0,[dosage amount],0, [dosage frequency])" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="56">
+<mxCell style="flow" parent="1" target="55" edge="1">
+<mxGeometry width="100" height="100" as="geometry">
+<mxPoint x="40" y="100.0032" as="sourcePoint"/>
+<mxPoint y="100" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</Flow>
+<Flow name="Elimination" Note="" FlowRate="[elimination rate]*[Drug Concentration]" OnlyPositive="true" TimeIndependent="false" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" id="57">
+<mxCell style="flow" parent="1" source="55" edge="1">
+<mxGeometry width="100" height="100" as="geometry">
+<mxPoint y="100" as="sourcePoint"/>
+<mxPoint x="550" y="99.99999999999996" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</Flow>
+<Variable name="dosage amount" Note="" Equation="0.1" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="58">
+<mxCell style="variable" parent="1" vertex="1">
+<mxGeometry x="80" y="190" width="90" height="80" as="geometry"/>
+</mxCell>
+</Variable>
+<Variable name="dosage frequency" Note="" Equation="22" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="true" SliderMax="24" SliderMin="0" SliderStep="1" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="59">
+<mxCell style="variable" parent="1" vertex="1">
+<mxGeometry x="170" y="320" width="90" height="90" as="geometry"/>
+</mxCell>
+</Variable>
+<Variable name="elimination rate" Note="" Equation="0.04" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="60">
+<mxCell style="variable" parent="1" vertex="1">
+<mxGeometry x="460" y="205" width="80" height="85" as="geometry"/>
+</mxCell>
+</Variable>
+<Link name="Link" Note="" BiDirectional="false" id="61">
+<mxCell style="link" parent="1" source="58" target="56" edge="1">
+<mxGeometry width="100" height="100" as="geometry">
+<mxPoint y="100" as="sourcePoint"/>
+<mxPoint x="100" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</Link>
+<Link name="Link" Note="" BiDirectional="false" id="62">
+<mxCell style="link" parent="1" source="59" target="56" edge="1">
+<mxGeometry width="100" height="100" as="geometry">
+<mxPoint y="100" as="sourcePoint"/>
+<mxPoint x="100" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</Link>
+<Link name="Link" Note="" BiDirectional="false" id="63">
+<mxCell style="link" parent="1" source="60" target="57" edge="1">
+<mxGeometry width="100" height="100" as="geometry">
+<mxPoint y="100" as="sourcePoint"/>
+<mxPoint x="100" as="targetPoint"/>
+</mxGeometry>
+</mxCell>
+</Link>
+<Variable name="min safe concentration" Note="" Equation="0.03" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="64">
+<mxCell style="variable" parent="1" vertex="1">
+<mxGeometry x="400" y="410" width="110" height="110" as="geometry"/>
+</mxCell>
+</Variable>
+<Variable name="maximum safe concentration" Note="" Equation="0.2" Units="Unitless" MaxConstraintUsed="false" MinConstraintUsed="false" MaxConstraint="100" MinConstraint="0" ShowSlider="false" SliderMax="100" SliderMin="0" SliderStep="" Image="None" FlipHorizontal="false" FlipVertical="false" LabelPosition="Middle" id="65">
+<mxCell style="variable" parent="1" vertex="1">
+<mxGeometry x="560" y="415" width="110" height="105" as="geometry"/>
+</mxCell>
+</Variable>
+</root>
+</InsightMakerModel>

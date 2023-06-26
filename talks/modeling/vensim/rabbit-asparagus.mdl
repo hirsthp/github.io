@@ -1,0 +1,151 @@
+{UTF-8}
+asparagus gets eaten=
+	foraging factor*Rabbits*Asparagus
+	~	
+	~		|
+
+rabbits are born=
+	rabbit birth factor*Rabbits*Asparagus
+	~	
+	~		|
+
+rabbits die=
+	rabbit death factor*Rabbits
+	~	
+	~		|
+
+asparagus grows=
+	asparagus growth factor
+	~	
+	~		|
+
+foraging factor=
+	0.1
+	~	
+	~		|
+
+Asparagus= INTEG (
+	asparagus grows-asparagus gets eaten,
+		10)
+	~	
+	~		|
+
+asparagus growth factor=
+	0.1
+	~	
+	~		|
+
+rabbit birth factor=
+	0.1
+	~	
+	~		|
+
+rabbit death factor=
+	0.1
+	~	
+	~		|
+
+Rabbits= INTEG (
+	rabbits are born-rabbits die,
+		2)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 10
+	~	Week
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Week
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Week [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Week [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|72,72,200,0
+10,1,Rabbits,233,137,40,20,3,3,0,0,0,0,0,0
+10,2,Asparagus,230,217,40,20,3,3,0,0,0,0,0,0
+12,3,48,88,134,10,8,0,3,0,0,-1,0,0,0
+1,4,6,1,4,0,0,22,0,0,0,-1--1--1,,1|(172,134)|
+1,5,6,3,100,0,0,22,0,0,0,-1--1--1,,1|(118,134)|
+11,6,48,145,134,6,8,34,3,0,0,1,0,0,0
+10,7,rabbits are born,145,150,40,8,40,3,0,0,-1,0,0,0
+12,8,48,373,135,10,8,0,3,0,0,-1,0,0,0
+1,9,11,8,4,0,0,22,0,0,0,-1--1--1,,1|(343,135)|
+1,10,11,1,100,0,0,22,0,0,0,-1--1--1,,1|(292,135)|
+11,11,48,318,135,6,8,34,3,0,0,1,0,0,0
+10,12,rabbits die,318,151,27,8,40,3,0,0,-1,0,0,0
+12,13,48,75,212,10,8,0,3,0,0,-1,0,0,0
+1,14,16,2,4,0,0,22,0,0,0,-1--1--1,,1|(166,212)|
+1,15,16,13,100,0,0,22,0,0,0,-1--1--1,,1|(108,212)|
+11,16,48,137,212,6,8,34,3,0,0,1,0,0,0
+10,17,asparagus grows,137,228,42,8,40,3,0,0,-1,0,0,0
+12,18,48,387,214,10,8,0,3,0,0,-1,0,0,0
+1,19,21,18,4,0,0,22,0,0,0,-1--1--1,,1|(353,214)|
+1,20,21,2,100,0,0,22,0,0,0,-1--1--1,,1|(293,214)|
+11,21,48,323,214,6,8,34,3,0,0,1,0,0,0
+10,22,asparagus gets eaten,323,230,51,8,40,3,0,0,-1,0,0,0
+10,23,rabbit birth factor,124,80,42,16,8,131,0,0,0,0,0,0
+10,24,rabbit death factor,334,83,34,14,8,3,0,0,0,0,0,0
+10,25,asparagus growth factor,140,275,45,14,8,3,0,0,0,0,0,0
+1,26,23,6,1,0,0,0,0,64,0,-1--1--1,,1|(117,97)|
+1,27,24,11,1,0,0,0,0,64,0,-1--1--1,,1|(340,106)|
+1,28,25,17,1,0,0,0,0,64,0,-1--1--1,,1|(129,245)|
+1,29,1,21,1,0,0,0,0,64,0,-1--1--1,,1|(272,187)|
+10,30,foraging factor,316,276,27,13,8,131,0,0,0,0,0,0
+1,31,30,22,1,0,0,0,0,64,0,-1--1--1,,1|(332,238)|
+1,32,1,7,1,0,0,0,0,64,0,-1--1--1,,1|(176,161)|
+1,33,1,12,1,0,0,0,0,64,0,-1--1--1,,1|(277,164)|
+1,34,2,7,1,0,0,0,0,64,0,-1--1--1,,1|(155,169)|
+1,35,2,22,1,0,0,0,0,64,0,-1--1--1,,1|(274,262)|
+12,36,0,246,439,211,110,3,188,0,0,1,0,0,0
+rabbits_and_asparagus
+///---\\\
+:GRAPH rabbits_and_asparagus
+:TITLE Rabbits and Asparagus
+:X-AXIS Time
+:SCALE
+:VAR Asparagus
+:LINE-WIDTH 3
+:VAR Rabbits
+:LINE-WIDTH 3
+:L<%^E!@
+1:Current.vdf
+9:Current
+23:0
+15:0,0,0,0,0,0
+19:200,0
+27:2,
+34:0,
+4:Time
+5:Rabbits
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:3
+41:0
+42:0
+24:0
+25:10
+26:10
